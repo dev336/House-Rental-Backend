@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "fe5962d6-b46d-43c1-bcac-a0f768b5d5ed",
+		"name": "House Rental Portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48304121"
+	},
+	"item": [
+		{
+			"name": "Signup (POST)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Arya Patel\",\r\n  \"email\": \"arya@example.com\",\r\n  \"password\": \"arya123\",\r\n  \"role\": \"owner\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"arya@example.com\",\r\n  \"password\": \"arya123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Properties",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTgxNGQyMmNiZmNhNzA4NmNlYjg3MyIsImVtYWlsIjoiYXJ5YUBleGFtcGxlLmNvbSIsInJvbGUiOiJvd25lciIsIm5hbWUiOiJBcnlhIFBhdGVsIiwiaWF0IjoxNzYwMDQwMzM1LCJleHAiOjE3NjA2NDUxMzV9.RMIjkjuJapRwBYy_jeUWpmHtNpYlPZu-Ia6IpfZtaHM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Cozy Apartment\",\r\n  \"address\": \"123 Regina Ave\",\r\n  \"city\": \"Regina\",\r\n  \"description\": \"2 bed, 1 bath apartment\",\r\n  \"rentPrice\": 1200\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/properties",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Renter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Dev Patel\",\r\n  \"email\": \"renter@example.com\",\r\n  \"password\": \"renter123\",\r\n  \"role\": \"renter\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Renter Create Booking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTgxOTM2MDBiMGJiYzg4OWE2OWE2NiIsImVtYWlsIjoicmVudGVyQGV4YW1wbGUuY29tIiwicm9sZSI6InJlbnRlciIsIm5hbWUiOiJEZXYgUGF0ZWwiLCJpYXQiOjE3NjAwNDEyNzAsImV4cCI6MTc2MDY0NjA3MH0.Si7VJgAqN2yh6KpfJgIJN6u42teAKClMtVa4TzFBGLE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"propertyID\": \"68e818da00b0bbc889a69a63\",\r\n  \"startDate\": \"2025-10-15\",\r\n  \"endDate\": \"2025-10-25\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rental Req Approve by Owner",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTgxNGQyMmNiZmNhNzA4NmNlYjg3MyIsImVtYWlsIjoiYXJ5YUBleGFtcGxlLmNvbSIsInJvbGUiOiJvd25lciIsIm5hbWUiOiJBcnlhIFBhdGVsIiwiaWF0IjoxNzYwMDQwMzM1LCJleHAiOjE3NjA2NDUxMzV9.RMIjkjuJapRwBYy_jeUWpmHtNpYlPZu-Ia6IpfZtaHM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"approvalStatus\": \"approved\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/bookings/68e8199e00b0bbc889a69a69/approve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"bookings",
+						"68e8199e00b0bbc889a69a69",
+						"approve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Renter Pays",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTgxOTM2MDBiMGJiYzg4OWE2OWE2NiIsImVtYWlsIjoicmVudGVyQGV4YW1wbGUuY29tIiwicm9sZSI6InJlbnRlciIsIm5hbWUiOiJEZXYgUGF0ZWwiLCJpYXQiOjE3NjAwNDEyNzAsImV4cCI6MTc2MDY0NjA3MH0.Si7VJgAqN2yh6KpfJgIJN6u42teAKClMtVa4TzFBGLE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/bookings/68e8199e00b0bbc889a69a69/pay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"bookings",
+						"68e8199e00b0bbc889a69a69",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Renter Leaves a Review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTgxOTM2MDBiMGJiYzg4OWE2OWE2NiIsImVtYWlsIjoicmVudGVyQGV4YW1wbGUuY29tIiwicm9sZSI6InJlbnRlciIsIm5hbWUiOiJEZXYgUGF0ZWwiLCJpYXQiOjE3NjAwNDEyNzAsImV4cCI6MTc2MDY0NjA3MH0.Si7VJgAqN2yh6KpfJgIJN6u42teAKClMtVa4TzFBGLE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"propertyID\": \"68e818da00b0bbc889a69a63\",\r\n  \"rating\": 5,\r\n  \"comment\": \"Amazing apartment, very clean and cozy!\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send a Message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTgxNGQyMmNiZmNhNzA4NmNlYjg3MyIsImVtYWlsIjoiYXJ5YUBleGFtcGxlLmNvbSIsInJvbGUiOiJvd25lciIsIm5hbWUiOiJBcnlhIFBhdGVsIiwiaWF0IjoxNzYwMDQwMzM1LCJleHAiOjE3NjA2NDUxMzV9.RMIjkjuJapRwBYy_jeUWpmHtNpYlPZu-Ia6IpfZtaHM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"receiverID\": \"68e8199e00b0bbc889a69a66\",\r\n  \"content\": \"Hi! Thanks for booking my apartment. When will you arrive?\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"messages"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

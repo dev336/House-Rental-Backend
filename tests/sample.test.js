@@ -1,0 +1,1 @@
+console.log('Sample test placeholder. Use Postman or add Jest tests here.');
